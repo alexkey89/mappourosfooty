@@ -4,16 +4,10 @@ var mainAppController = angular.module('mainAppController', []);
 
 
 //Details controller
-mainAppController.controller('mainCtrl', ['$scope', function ($scope) {
+mainAppController.controller('mainCtrl', ['$scope', function ($scope, $location, $rootScope, filterSettings, db, $http) {
 
 
-	$scope.msg = "Mappouros";
-	  
-	  $scope.geolocation = function(){
-	   
-	  }
-
-	$scope.pitches = ["dimos", "nuevo campo", "paeek"]
+$scope.pitches = ["Dimos Strovolou", "Nuevo Campo", "PAEEK", "City Gipeda", "Keravnos"]
 
 
 }]);

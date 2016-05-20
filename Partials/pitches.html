@@ -1,14 +1,14 @@
 
   <h1>Find a pitch near you</h1>
-  
-  <div class="btn pointer" ng-click="geolocation()">Begin</div>
-  <br />
-  <input ng-model="query" type="text" placeholder="e.g dimos" />
-  
-  <ul>
-    <li ng-repeat="p in pitches | filter: query">{{p}}</li>
-  </ul>
-  
-  
 
+  	<form name="mainPitches">
+ 	 	<input type="text" name="postcode" placeholder="postcode" ng-model="query" />
+   		<div class="btn pointer" ng-click="geolocation()">Begin</div>
+  	</form>
+    
+   <ul>
+		<li ng-repeat="p in pitches | filter: query">
+			 <a href="#/view4/{{pitches.indexOf(p)}}">{{p}}</a>
+		</li>
+   </ul>
 
