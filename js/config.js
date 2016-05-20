@@ -18,7 +18,7 @@ var mappourosApp = angular.module("mappourosApp", ['ngRoute', 'mainAppController
                 templateUrl: 'Partials/pitches.html'
             })
             .when('/view4:pitchId', {
-                controller: 'mainCtrl',
+                controller: 'DetailsController',
                 templateUrl: 'Partials/pitchDetails.html'
             })
     		.otherwise({redirectTo: '/view1'})
