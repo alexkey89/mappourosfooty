@@ -11,18 +11,15 @@ $scope.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name
 
 $scope.getGeoLocation = function(){
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position){
-      $scope.$apply(function(){
-        $scope.position = position;
-      });
+    $http.get("http://ipinfo.io")
+    .then(function(response) {
+    	$scope.city = response.data.city;
+    	$scope.region = response.data.region;
     });
+
   }
 
-}
-
 }]);
-
 
 //Details controller
 mainAppController.controller('DetailsController', ['$scope','$routeParams', function ($scope, $routeParams) {
@@ -31,7 +28,6 @@ $scope.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name
   
   //determine which Recipe
   $scope.whichpitch = $routeParams.pitchId;
-
 
 
 }]);
