@@ -2,7 +2,9 @@
 
 <div class="pitches" ng-model="pitches">
 
-	<p>hello {{pitches[whichpitch]}}</p>
+	<p>{{pitches[whichpitch].name}}</p>
+	<br />
+	<img src="img/{{pitches[whichpitch].img}}" width="300" />
 
 </div>
 
@@ -10,7 +12,7 @@
 	
 </div>
 
-<a href="#/view2">&laquo; Back to List</a>
+<a href="#/view3">&laquo; Back to Pitches</a>
 <br />
 <a href="#/view1">&laquo; Back to Home Page</a>
 </section>

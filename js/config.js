@@ -17,7 +17,7 @@ var mappourosApp = angular.module("mappourosApp", ['ngRoute', 'mainAppController
                 controller: 'mainCtrl',
                 templateUrl: 'Partials/pitches.html'
             })
-            .when('/view4:pitchId', {
+            .when('/view4/:pitchId', {
                 controller: 'DetailsController',
                 templateUrl: 'Partials/pitchDetails.html'
             })
