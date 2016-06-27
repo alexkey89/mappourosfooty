@@ -1,17 +1,11 @@
 <section class="pitch container center">
-
-<div class="pitches" ng-model="pitches">
-
-	<p>{{pitches[whichpitch].name}}</p>
+	<div class="pitches" ng-model="details.pitches">
+		<p>{{details.pitches[details.whichpitch].name}}</p>
+		<br />
+		<img src="img/{{details.pitches[details.whichpitch].img}}" width="300" />
+	</div>
 	<br />
-	<img src="img/{{pitches[whichpitch].img}}" width="300" />
-
 </div>
-
-<br />
-	
-</div>
-
 <a href="#/view3">&laquo; Back to Pitches</a>
 <br />
 <a href="#/view1">&laquo; Back to Home Page</a>

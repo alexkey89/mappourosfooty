@@ -1,20 +1,20 @@
-"use strict";
+'use strict';
 
 var mainAppController = angular.module('mainAppController', []);
 
-
 //Details controller
-mainAppController.controller('mainCtrl', ['$scope','$http', function ($scope, $http) {
+mainAppController.controller('mainCtrl', ['$http', function ($http) {
 
+var vm = this;
 
-$scope.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"Nuevo Campo"},{"name":"PAEEK"},{"name":"City Gipeda"}, {"name":"Keravnos"},{"name":"parko akropolis"}]
+vm.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"Nuevo Campo"},{"name":"PAEEK"},{"name":"City Gipeda"}, {"name":"Keravnos"},{"name":"parko akropolis"}]
 
-$scope.getGeoLocation = function(){
+vm.getGeoLocation = function(){
 
-    $http.get("http://ipinfo.io")
+    $http.get('http://ipinfo.io')
     .then(function(response) {
-    	$scope.city = response.data.city;
-    	$scope.region = response.data.region;
+    	vm.city = response.data.city;
+    	vm.region = response.data.region;
     });
 
   }
@@ -22,12 +22,12 @@ $scope.getGeoLocation = function(){
 }]);
 
 //Details controller
-mainAppController.controller('DetailsController', ['$scope','$routeParams', function ($scope, $routeParams) {
+mainAppController.controller('DetailsController', ['$routeParams', function ($routeParams) {
 
-$scope.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"Nuevo Campo"},{"name":"PAEEK"},{"name":"City Gipeda"}, {"name":"Keravnos"},{"name":"parko akropolis"}]
+var vm = this;
+
+vm.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"Nuevo Campo"},{"name":"PAEEK"},{"name":"City Gipeda"}, {"name":"Keravnos"},{"name":"parko akropolis"}]
   
-  //determine which Recipe
-  $scope.whichpitch = $routeParams.pitchId;
-
+  vm.whichpitch = $routeParams.pitchId;
 
 }]);

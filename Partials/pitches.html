@@ -1,15 +1,12 @@
-
-  <h1>Find a pitch near you</h1>
-
-  	<form name="mainPitches">
- 	 	<input type="text" name="postcode" placeholder="postcode" ng-model="query" />
-   		<div class="btn pointer" ng-click="getGeoLocation()">Begin</div>
-      {{city}} {{region}}
-  	</form>
-    
-   <ul>
-		<li ng-repeat="p in pitches | filter: query">
-			 <a href="#/view4/{{pitches.indexOf(p)}}">{{p.name}}</a>
-		</li>
-   </ul>
+<h1>Find a pitch near you</h1>
+<form name="mainPitches">
+  <input type="text" name="postcode" placeholder="postcode" ng-model="query" />
+  <div class="btn pointer" ng-click="getGeoLocation()">Begin</div>
+  {{main.city}} {{main.region}}
+</form>
+<ul>
+  <li ng-repeat="p in main.pitches | filter: query">
+    <a href="#/view4/{{main.pitches.indexOf(p)}}">{{p.name}}</a>
+  </li>
+</ul>
 
