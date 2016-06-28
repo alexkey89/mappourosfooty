@@ -1,7 +1,8 @@
 <h1>Find a pitch near you</h1>
 <form name="mainPitches">
-  <input type="text" name="postcode" placeholder="postcode" ng-model="query" />
-  <div class="btn pointer" ng-click="getGeoLocation()">Begin</div>
+  <!-- <input type="text" name="postcode" placeholder="postcode" ng-model="query" /> -->
+  <search-box></search-box>
+  <div class="btn pointer" ng-click="main.getGeoLocation()">Begin</div>
   {{main.city}} {{main.region}}
 </form>
 <ul>

@@ -2,22 +2,15 @@
 
 var mainAppController = angular.module('mainAppController', []);
 
-//Details controller
+//Main controller
 mainAppController.controller('mainCtrl', ['$http', function ($http) {
 
 var vm = this;
 
 vm.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"Nuevo Campo"},{"name":"PAEEK"},{"name":"City Gipeda"}, {"name":"Keravnos"},{"name":"parko akropolis"}]
 
-vm.getGeoLocation = function(){
 
-    $http.get('http://ipinfo.io')
-    .then(function(response) {
-    	vm.city = response.data.city;
-    	vm.region = response.data.region;
-    });
 
-  }
 
 }]);
 
@@ -31,3 +24,21 @@ vm.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"N
   vm.whichpitch = $routeParams.pitchId;
 
 }]);
+
+
+//directives
+mainAppController.directive('searchBox', function(){
+	var tmp = ['<div>','<input type="text" placeholder="{{placeholder}}" name="postcode" maxlength="{{maxlength}}" ng-model="query" />','</div>'].join('');
+	return {
+		maxlength: '@maxlength',
+		placeholder: '@placeholder',
+		restrict: 'AE',
+		template: tmp,
+		link: function(scope){
+			scope.placeholder = 'Enter postcode';
+		}
+	}
+});
+
+
+
