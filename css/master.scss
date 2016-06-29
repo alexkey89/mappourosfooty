@@ -191,6 +191,8 @@ form {
   }
 
   input {
+    
+    &[type="text"], &[type="number"], &[type="password"], &[type="submit"]{
     @include noappearance{}
     outline: 0;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -217,6 +219,7 @@ form {
         color: #53e3a6;
     }
   }
+}
 }
 
 
