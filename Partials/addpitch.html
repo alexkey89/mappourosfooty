@@ -1,16 +1,20 @@
-<form name="mainPitches">
+<form name="mainPitches" ng-submit="details.handleSubmit()">
 <h2>Add a pitch near you</h2>
 <label>Enter location <i class="fa fa-map-marker" aria-hidden="true"></i>
-	<input type="text" name="" placeholder="enter location" />
+	<input type="text" name="" placeholder="enter location" ng-model="details.pitch.location" />
 </label>
 <label>Enter Name
-	<input type="text" name="" placeholder="enter name" />
+	<input type="text" name="" placeholder="enter name" ng-model="details.pitch.name" />
 </label>
 <label>Enter adress
-	<input type="text" name="" placeholder="enter adress" />
+	<input type="text" name="" placeholder="enter adress" ng-model="details.pitch.adress" />
 </label>
+<!-- <label>Upload image
+	<input type="file" name="image" ng-model="details.pitch.img" />
+</label> -->
 <label>Description
-	<input type="text" name="" placeholder="enter description" />
+	<input type="text" name="" placeholder="enter description" ng-model="details.pitch.description" />
 </label>
 <div>[GOOGLE MAP GOES HERE]</div>
+<input type="submit" name="" value="Add pitch" />
 </form>

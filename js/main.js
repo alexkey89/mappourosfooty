@@ -19,11 +19,33 @@ mainAppController.controller('DetailsController', ['$routeParams', function ($ro
 
 var vm = this;
 
-vm.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png"},{"name":"Nuevo Campo"},{"name":"PAEEK"},{"name":"City Gipeda"}, {"name":"Keravnos"},{"name":"parko akropolis"}]
+  vm.pitches = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png", "location":"nicosia", "adress":"Korytsas, Strovolos", "description":"Gipeda dimou" },
+  				{"name":"Nuevo Campo", "img": "nuevo.png", "location": "nicosia", "adress":"Odos Didymoteichou, 2052 Strovolos", "description":"Nuevo campo"},
+  				{"name":"PAEEK", "img": "PAEEK.png", "location": "nicosia", "adress":"Odos Kifea, 2330 Lakatamia", "description":"PAEEK FC futsal"},
+  				{"name":"City Gipeda", "img":"city.png", "location": "nicosia", "adress":"2034 Nicosia", "description":"Gipeda City"}]
   
   vm.whichpitch = $routeParams.pitchId;
+  
+  //add a pitch
+  vm.handleSubmit = function(){
+  	vm.pitches.push(vm.pitch)
+  	console.log(vm.pitches)
+  }
+
 
 }]);
+
+
+//game controller
+mainAppController.controller('GameController', function(){
+	var vm = this;
+
+	//add game
+	vm.handleSubmit = function(){
+	  console.log(vm.newgame)
+	}
+
+})
 
 
 //directives

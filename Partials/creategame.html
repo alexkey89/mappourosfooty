@@ -1,36 +1,29 @@
-<form name="game">
+<form name="game" ng-submit="game.handleSubmit()">
 	<h2>Create a game <i class="fa fa-futbol-o" aria-hidden="true"></i></h2>
 	<label>Title
-		<input type="text" name="" />
+		<input type="text" name="" ng-model="game.newgame.title" />
 	</label>
-
 	<label>Description
-		<input type="text" name="" />
+		<input type="text" name="" ng-model="game.newgame.description" />
 	</label>
-
 	<label>Starts at - date and time
-		<input type="text" name="" />
+		<input type="text" name="" ng-model="game.newgame.startdate" />
 	</label>
-
 	<label>Finishes at date and time
-		<input type="text" name="" />
+		<input type="text" name="" ng-model="game.newgame.enddate" />
 	</label>
-
 	<label>Venue (auto search) <i class="fa fa-map-marker" aria-hidden="true"></i>
-		<input type="text" name="" />
+		<input type="text" name="" ng-model="game.newgame.venue" />
 		Can't find it? <a href="#">Add it</a>
 	</label>
-
 	<label>Private game
-		<input type="checkbox" name="" /> <i class="fa fa-lock" aria-hidden="true"></i>
+		<input type="checkbox" name="" ng-model="game.newgame.privategame" /> <i class="fa fa-lock" aria-hidden="true"></i>
 	</label>
-
 	<label>Payment method<br /><br />
 		Online <input type="radio" name="payment" value="Online" />
 		Cash <input type="radio" name="payment" value="Cash" />
 		Free <input type="radio" name="payment" value="Free" />
 	</label>
-
 	<label>Team player limit
 		<select>
 			<option>5 - aside</option>
@@ -41,11 +34,9 @@
 			<option>11 - aside</option>
 		</select> 
 	</label>
-
 	<label>Price per player 
-		<input type="number" name="" /> 
+		<input type="number" name="" ng-model="game.newgame.priceperplayer" /> 
 	</label>
-
 	<label>Currency
 	<select>
 		<option>EUR &euro;</option>
@@ -53,12 +44,9 @@
 		<option>USD &#x24;</option>
 	</select>
 	</label>
-
 	<label>Refund if game cancelled  
-		<input type="number" name="" />
+		<input type="number" name="" ng-model="game.newgame.refund=false" />
 	</label>
-
 	<input type="submit" name="" value="Create game" />
-
 </form>
 
