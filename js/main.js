@@ -37,7 +37,7 @@ var vm = this;
 
 
 //game controller
-mainAppController.controller('GameController', function(){
+mainAppController.controller('GameController', ['$routeParams', function($routeParams){
 	var vm = this;
 
 	//add game
@@ -45,7 +45,7 @@ mainAppController.controller('GameController', function(){
 	  console.log(vm.newgame)
 	}
 
-})
+}])
 
 
 //directives
