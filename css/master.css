@@ -13,6 +13,10 @@
 .red {
   color: #f00; }
 
+label {
+  display: block;
+  margin-top: 3%; }
+
 body {
   overflow-x: hidden;
   text-align: center;

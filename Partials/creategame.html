@@ -1,5 +1,5 @@
 <form name="game">
-	<h2>Create a game</h2>
+	<h2>Create a game <i class="fa fa-futbol-o" aria-hidden="true"></i></h2>
 	<label>Title
 		<input type="text" name="" />
 	</label>
@@ -16,19 +16,19 @@
 		<input type="text" name="" />
 	</label>
 
-	<label>Venue (auto search)
+	<label>Venue (auto search) <i class="fa fa-map-marker" aria-hidden="true"></i>
 		<input type="text" name="" />
-		Can't find it? Add it
+		Can't find it? <a href="#">Add it</a>
 	</label>
 
 	<label>Private game
-		<input type="checkbox" name="" />
+		<input type="checkbox" name="" /> <i class="fa fa-lock" aria-hidden="true"></i>
 	</label>
 
-	<label>Payment method
+	<label>Payment method<br /><br />
 		Online <input type="radio" name="payment" value="Online" />
 		Cash <input type="radio" name="payment" value="Cash" />
-		Free<input type="radio" name="payment" value="Free" />
+		Free <input type="radio" name="payment" value="Free" />
 	</label>
 
 	<label>Team player limit
@@ -43,11 +43,19 @@
 	</label>
 
 	<label>Price per player 
-		<input type="number" name="" /> EUR
+		<input type="number" name="" /> 
+	</label>
+
+	<label>Currency
+	<select>
+		<option>EUR &euro;</option>
+		<option>GBP &pound;</option>
+		<option>USD &#x24;</option>
+	</select>
 	</label>
 
 	<label>Refund if game cancelled  
-		<input type="number" name="" /> EUR
+		<input type="number" name="" />
 	</label>
 
 	<input type="submit" name="" value="Create game" />
