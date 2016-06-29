@@ -40,5 +40,9 @@ var mappourosApp = angular.module('mappourosApp', ['ngRoute', 'mainAppController
                 controller: 'mainCtrl as main',
                 templateUrl: 'Partials/userprofile.html'
             })
+            .when('/view10', {
+                controller: 'GameController as game',
+                templateUrl: 'Partials/gameDetails.html'
+            })
     		.otherwise({redirectTo: '/view1'})
     });
