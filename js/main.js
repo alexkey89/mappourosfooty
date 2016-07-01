@@ -45,6 +45,8 @@ mainAppController.controller('GameController', ['$routeParams', function($routeP
 	  console.log(vm.newgame)
 	}
 
+	vm.notification = 'You are the admin of this game';
+
 }])
 
 
@@ -62,5 +64,24 @@ mainAppController.directive('searchBox', function(){
 	}
 });
 
+mainAppController.directive('gameNotifications', function(){
+	var tmp = ['<div class="notifications" ng-show="showme">', 
+			   '<p>','<i class="fa fa-bell" aria-hidden="true"></i> {{notifications}}',
+			   '</p>','<span class="x_btn" ng-click="hidenots()"><i class="fa fa-times-circle" aria-hidden="true"></i></span>',
+			   '</div>'].join('');
+	return {
+		restrict: 'E',
+		template: tmp,
+		scope: {
+			notifications: '@notifications'
+		},
+		link: function(scope){
+			scope.showme = true;
+			scope.hidenots = function(){
+				scope.showme = false;
+			}
+		}
+	}
+})
 
 
