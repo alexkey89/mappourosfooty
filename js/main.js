@@ -7,7 +7,11 @@ mainAppController.controller('mainCtrl', ['$http', 'rData', 'ngProgressFactory',
 
 var vm = this;
 
- vm.pitches = rData;
+ rData.get().then(function(response){
+    var data = response.data;
+    vm.pitches = data;
+});
+ 
  vm.progressbar = ngProgressFactory.createInstance();
  vm.progressbar.start();
  vm.progressbar.complete(); 
@@ -19,7 +23,11 @@ var vm = this;
 mainAppController.controller('DetailsController', ['$routeParams','rData', function ($routeParams,rData) {
 
 var vm = this;
-  	vm.pitches = rData;
+
+ rData.get().then(function(response){
+    var data = response.data;
+    vm.pitches = data;
+});
 
   	vm.whichpitch = $routeParams.pitchId;
   
@@ -82,14 +90,21 @@ mainAppController.directive('gameNotifications', function(){
 })
 
 //factories
-mainAppController.factory('rData', function(){
+mainAppController.factory('rData', function($http){
 
 
-  var rData = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png", "location":"nicosia", "adress":"Korytsas, Strovolos", "description":"Gipeda dimou" },
-  				{"name":"Nuevo Campo", "img": "nuevo.png", "location": "nicosia", "adress":"Odos Didymoteichou, 2052 Strovolos", "description":"Nuevo campo"},
-  				{"name":"PAEEK", "img": "PAEEK.png", "location": "nicosia", "adress":"Odos Kifea, 2330 Lakatamia", "description":"PAEEK FC futsal"},
-  				{"name":"City Gipeda", "img":"city.png", "location": "nicosia", "adress":"2034 Nicosia", "description":"Gipeda City"}]
+var url = "js/db.json";
 
-  return rData;
+return {
+    get: function(method){
+         return $http({
+         	method: 'GET',
+         	url: url
+         }).then(function(response){
+         	return response;
+         })
+    }
+}
+
 
 });
