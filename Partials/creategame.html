@@ -2,20 +2,20 @@
 <form ng-submit="game.handleSubmit()">
 	<h2>Create a game <i class="fa fa-futbol-o" aria-hidden="true"></i></h2>
 	<label>Title
-		<input type="text" name="" ng-model="game.newgame.title" />
+		<input placeholder="e.g friendly game" autofocus type="text" name="" ng-model="game.newgame.title" />
 	</label>
 	<label>Description
-		<input type="text" name="" ng-model="game.newgame.description" />
+		<input type="text" placeholder="e.g playing for 2 hours..." name="" ng-model="game.newgame.description" />
 	</label>
 	<label>Starts at - date and time
-		<input type="text" name="" ng-model="game.newgame.startdate" />
+		<input type="text" placeholder="e.g 20/6/2016" name="" ng-model="game.newgame.startdate" />
 	</label>
 	<label>Finishes at date and time
-		<input type="text" name="" ng-model="game.newgame.enddate" />
+		<input type="text" placeholder="e.g 20/6/2016" name="" ng-model="game.newgame.enddate" />
 	</label>
-	<label>Venue (auto search) <i class="fa fa-map-marker" aria-hidden="true"></i>
-		<input type="text" name="" ng-model="game.newgame.venue" />
-		Can't find it? <a href="#/view7">Add it</a>
+	<label>Pitch (auto search) <i class="fa fa-map-marker" aria-hidden="true"></i>
+		<input type="text" name="" placeholder="e.g Nuevo Campo" ng-model="game.newgame.venue" />
+		Cannot be found? <a href="#/view7">Add it</a>
 	</label>
 	<label>Private game
 		<input type="checkbox" name="" ng-model="game.newgame.privategame" /> <i class="fa fa-lock" aria-hidden="true"></i>
@@ -36,7 +36,7 @@
 		</select> 
 	</label>
 	<label>Price per player 
-		<input type="number" name="" ng-model="game.newgame.priceperplayer" /> 
+		<input type="number" placeholder="e.g 10 EUR" name="" ng-model="game.newgame.priceperplayer" /> 
 	</label>
 	<label>Currency
 	<select>
@@ -46,7 +46,7 @@
 	</select>
 	</label>
 	<label>Refund if game cancelled  
-		<input type="number" name="" ng-model="game.newgame.refund" />
+		<input type="number" name="" placeholder="e.g 50 EUR" ng-model="game.newgame.refund" />
 	</label>
 	<input type="submit" name="" value="Create game" />
 </form>

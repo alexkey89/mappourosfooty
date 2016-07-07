@@ -4,15 +4,18 @@
     <meta charset="utf-8">
     <title>Mappouros App</title>
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" href="js/bower_components/ngProgress/ngProgress.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome-4.6.3/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="css/master.css" />
 </head>
 
 <body ng-app="mappourosApp">
 
-<div class="tag"></div>
+<header>
+    <div class="mainlogo"><img src="img/football.png" height="50" /><span>Play football.com</span></div>
+</header>
 
-  <ul class="bg-bubbles">
+<!--   <ul class="bg-bubbles">
     <li></li>
     <li></li>
     <li></li>
@@ -22,7 +25,7 @@
     <li></li>
     <li></li>
     <li></li>
-  </ul>
+  </ul> -->
 
 <section id="main-content">
     <div ng-view></div>
@@ -32,7 +35,15 @@
     <img src="img/pitch1.jpg" alt="football">
   </div>
 
+  <footer>
+      <ul>
+          <li>playfootball.com |</li>
+          <li>2016 <sup>&copy;</sup></li>
+      </ul>
+  </footer>
+
 <script type="text/javascript" src="js/lib/angular.min.js"></script>
+<script src="js/bower_components/ngProgress/build/ngProgress.js"></script>
 <script type="text/javascript" src="js/lib/angular-route.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/main.js"></script>

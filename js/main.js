@@ -1,19 +1,17 @@
 'use strict';
 
-var mainAppController = angular.module('mainAppController', []);
+var mainAppController = angular.module('mainAppController', ['ngProgress']);
 
 //Main controller
-mainAppController.controller('mainCtrl', ['$http', function ($http) {
+mainAppController.controller('mainCtrl', ['$http', 'rData', 'ngProgressFactory', function ($http, rData, ngProgressFactory) {
 
 var vm = this;
 
-vm.pitches = [{"name":"Dimos Strovolou", 
-			   "img":"dimos_strovolou.png"},
-			   {"name":"Nuevo Campo"},
-			   {"name":"PAEEK"},
-			   {"name":"City Gipeda"}, 
-			   {"name":"Keravnos"},
-			   {"name":"parko akropolis"}]
+ vm.pitches = rData;
+ vm.progressbar = ngProgressFactory.createInstance();
+ vm.progressbar.start();
+ vm.progressbar.complete(); 
+
 
 }]);
 
@@ -64,7 +62,7 @@ mainAppController.directive('searchBox', function(){
 });
 
 mainAppController.directive('gameNotifications', function(){
-	var tmp = ['<div class="notifications" ng-show="showme">', 
+	var tmp = ['<div class="notifications animated fadeInUp" ng-show="showme">', 
 			   '<p>','<i class="fa fa-bell" aria-hidden="true"></i> {{notifications}}',
 			   '</p>','<span class="x_btn" ng-click="hidenots()"><i class="fa fa-times-circle" aria-hidden="true"></i></span>',
 			   '</div>'].join('');
@@ -85,6 +83,7 @@ mainAppController.directive('gameNotifications', function(){
 
 //factories
 mainAppController.factory('rData', function(){
+
 
   var rData = [{"name":"Dimos Strovolou", "img":"dimos_strovolou.png", "location":"nicosia", "adress":"Korytsas, Strovolos", "description":"Gipeda dimou" },
   				{"name":"Nuevo Campo", "img": "nuevo.png", "location": "nicosia", "adress":"Odos Didymoteichou, 2052 Strovolos", "description":"Nuevo campo"},
