@@ -21,31 +21,24 @@
 		<input type="checkbox" name="" ng-model="game.newgame.privategame" /> <i class="fa fa-lock" aria-hidden="true"></i>
 	</label>
 	<label>Payment method<br /><br />
-		Online <input type="radio" name="payment" value="Online" />
-		Cash <input type="radio" name="payment" value="Cash" />
-		Free <input type="radio" name="payment" value="Free" />
+		Online <input type="radio" name="payment" value="Online" ng-model='money' />
+		Cash <input type="radio" name="payment" value="Cash" ng-model='money' />
+		Free <input type="radio" name="payment" value="Free" ng-model='money' />
 	</label>
 	<label>Team player limit
 		<select>
-			<option>5 - aside</option>
-			<option>7 - aside</option>
-			<option>8 - aside</option>
-			<option>9 - aside</option>
-			<option>10 - aside</option>
-			<option>11 - aside</option>
+			<option ng-repeat="n in game.numOfPlayers track by $index">{{n}} - aside</option>
 		</select> 
 	</label>
-	<label>Price per player 
+	<label ng-hide="money == 'Free'">Price per player 
 		<input type="number" placeholder="e.g 10 EUR" name="" ng-model="game.newgame.priceperplayer" /> 
 	</label>
-	<label>Currency
+	<label ng-hide="money == 'Free'">Currency
 	<select>
-		<option>EUR &euro;</option>
-		<option>GBP &pound;</option>
-		<option>USD &#x24;</option>
+		<option ng-repeat="c in game.currency track by $index">{{c.name}} {{c.symbol | trusted}}</option>
 	</select>
 	</label>
-	<label>Refund if game cancelled  
+	<label ng-hide="money == 'Free'">Refund if game cancelled  
 		<input type="number" name="" placeholder="e.g 50 EUR" ng-model="game.newgame.refund" />
 	</label>
 	<input type="submit" name="" value="Create game" />

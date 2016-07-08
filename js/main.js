@@ -11,7 +11,8 @@ var vm = this;
     var data = response.data;
     vm.pitches = data;
 });
- 
+
+
  vm.progressbar = ngProgressFactory.createInstance();
  vm.progressbar.start();
  vm.progressbar.complete(); 
@@ -49,6 +50,11 @@ mainAppController.controller('GameController', ['$routeParams', function($routeP
 	vm.handleSubmit = function(){
 	  console.log(vm.newgame)
 	}
+
+	vm.numOfPlayers = [5,7,8,9,10,11];
+	vm.currency = [{"name":"EUR", "symbol": "&euro;"},
+				   {"name":"GBP", "symbol": "&pound;"},
+				   {"name":"USD", "symbol": "&#x24"}];
 
 	vm.notification = 'You are the admin of this game';
 
@@ -92,7 +98,6 @@ mainAppController.directive('gameNotifications', function(){
 //factories
 mainAppController.factory('rData', function($http){
 
-
 var url = "js/db.json";
 
 return {
@@ -106,5 +111,14 @@ return {
     }
 }
 
-
 });
+
+
+//filters
+mainAppController.filter('trusted', ['$sce', function($sce) {
+    var div = document.createElement('div');
+    return function(text) {
+        div.innerHTML = text;
+        return $sce.trustAsHtml(div.textContent);
+    };
+}]);
