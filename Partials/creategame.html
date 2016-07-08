@@ -27,11 +27,11 @@
 	</label>
 	<label>Team player limit
 		<select>
-			<option ng-repeat="n in game.numOfPlayers track by $index">{{n}} - aside</option>
+			<option ng-model="game.newgame.numOfPlayers" ng-repeat="n in game.numOfPlayers track by $index">{{n}} - aside</option>
 		</select> 
 	</label>
 	<label ng-hide="money == 'Free'">Price per player 
-		<input type="number" placeholder="e.g 10 EUR" name="" ng-model="game.newgame.priceperplayer" /> 
+		<input type="number" min="0" placeholder="e.g 10 EUR" name="" ng-model="game.newgame.priceperplayer" />
 	</label>
 	<label ng-hide="money == 'Free'">Currency
 	<select>
